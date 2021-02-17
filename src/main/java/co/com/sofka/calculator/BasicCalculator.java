@@ -11,4 +11,26 @@ public class BasicCalculator {
         logger.info( "Summing {} + {}", number1, number2 );
         return number1 + number2;
     }
+
+    public Long sub(Long number1, Long number2) {
+        logger.info( "Substraction {} - {}", number1, number2 );
+        return number1 - number2;
+    }
+
+    public Long multi(Long number1, Long number2) {
+        logger.info( "Substraction {} * {}", number1, number2 );
+        return number1 * number2;
+    }
+
+    public Long division(Long number1, Long number2) {
+        logger.info( "Substraction {} / {}", number1, number2 );
+        Long resultado=0L;
+        try {
+            resultado= number1 / number2;
+        }
+        catch (ArithmeticException e){
+            logger.info("La división por cero da error");
+        }
+        return resultado;
+    }
 }
