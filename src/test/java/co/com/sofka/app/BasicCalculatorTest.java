@@ -1,5 +1,6 @@
-package co.com.sofka.calculator;
+package co.com.sofka.app;
 
+import co.com.sofka.app.calculator.BasicCalculator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,4 +31,5 @@ class BasicCalculatorTest {
         // Assert
         assertEquals(expectedValue, result);
     }
+
 }
