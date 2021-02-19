@@ -1,5 +1,6 @@
 package co.com.sofka.app;
 import co.com.sofka.app.calculator.BasicCalculator;
+import com.sun.jdi.LongValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
@@ -25,7 +26,13 @@ public class App {
 
         BasicCalculator calculator = new BasicCalculator();
         Long result = calculator.sum( number1, number2 );
+        Long resultSubstract= calculator.substract(number1,number2);
+        Long resultMultiply = calculator.multiply(number1,number2);
+        Long resultDivision = calculator.division(number1,number2);
 
         System.out.println( number1 + " + " + number2 + " = " + result );
+        System.out.println( number1 + " - " + number2 + " = " + resultSubstract );
+        System.out.println( number1 + " * " + number2 + " = " + resultMultiply );
+        System.out.println( number1 + " / " + number2 + " = " + resultDivision );
     }
 }
