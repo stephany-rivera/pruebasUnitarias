@@ -12,12 +12,12 @@ public class BasicCalculator {
         return number1 + number2;
     }
 
-    public Long sub(Long number1, Long number2) {
+    public Long substract(Long number1, Long number2) {
         logger.info( "Substraction {} - {}", number1, number2 );
         return number1 - number2;
     }
 
-    public Long multi(Long number1, Long number2) {
+    public Long multiply(Long number1, Long number2) {
         logger.info( "Substraction {} * {}", number1, number2 );
         return number1 * number2;
     }

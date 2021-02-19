@@ -39,15 +39,15 @@ class BasicCalculatorTest {
     }
 
     @Test
-    @DisplayName("Testing sub: 5-3=2")
-    public void sub() {
+    @DisplayName("Testing substract: 5-3=2")
+    public void substract() {
         // Arrange
         Long number1 = 5L;
         Long number2 = 3L;
         Long expectedValue = 2L;
 
         // Act
-        Long result = basicCalculator.sub(number1, number2);
+        Long result = basicCalculator.substract(number1, number2);
 
         // Assert
         assertEquals(expectedValue, result);
@@ -61,8 +61,37 @@ class BasicCalculatorTest {
             "550,  48, 502",
             "447,  100, 347"
     })
-    public void severalSubs(Long first, Long second, Long expectedResult) {
-        assertEquals(expectedResult, basicCalculator.sub(first, second),
+    public void severalSubstractions(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.substract(first, second),
+                () -> first + " + " + second + " should equal " + expectedResult);
+    }
+
+
+    @Test
+    @DisplayName("Testing multiply: 5*8=40")
+    void multiply() {
+        // Arrange
+        Long number1 = 5L;
+        Long number2 = 8L;
+        Long expectedValue = 40L;
+
+        // Act
+        Long result = basicCalculator.multiply(number1, number2);
+
+        // Assert
+        assertEquals(expectedValue, result);
+    }
+
+    @DisplayName("Testing several multiplications")
+    @ParameterizedTest(name = "{0} * {1} = {2}")
+    @CsvSource({
+            "8,    3,   24",
+            "16,    2,   32",
+            "550,  48, 26400",
+            "447,  100, 44700"
+    })
+    public void severalMultiplications(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.multiply(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
 
