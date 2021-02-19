@@ -1,6 +1,5 @@
 package co.com.sofka.app;
 import co.com.sofka.app.calculator.BasicCalculator;
-import com.sun.jdi.LongValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
@@ -30,9 +29,12 @@ public class App {
         Long resultMultiply = calculator.multiply(number1,number2);
         Float resultDivision = calculator.division(number1,number2);
 
-        System.out.println( number1 + " + " + number2 + " = " + result );
-        System.out.println( number1 + " - " + number2 + " = " + resultSubstract );
-        System.out.println( number1 + " * " + number2 + " = " + resultMultiply );
-        System.out.println( number1 + " / " + number2 + " = " + resultDivision );
+
+        logger.info( " {} + {} = {}", number1, number2,result);
+        logger.info( " {} - {} = {}", number1, number2,resultSubstract);
+        logger.info( " {} * {} = {}", number1, number2,resultMultiply);
+        logger.info( " {} / {} = {}", number1, number2,resultDivision);
+
+
     }
 }
