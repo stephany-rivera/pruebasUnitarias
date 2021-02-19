@@ -28,7 +28,7 @@ public class App {
         Long result = calculator.sum( number1, number2 );
         Long resultSubstract= calculator.substract(number1,number2);
         Long resultMultiply = calculator.multiply(number1,number2);
-        Long resultDivision = calculator.division(number1,number2);
+        Float resultDivision = calculator.division(number1,number2);
 
         System.out.println( number1 + " + " + number2 + " = " + result );
         System.out.println( number1 + " - " + number2 + " = " + resultSubstract );

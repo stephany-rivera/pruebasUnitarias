@@ -22,11 +22,11 @@ public class BasicCalculator {
         return number1 * number2;
     }
 
-    public Long division(Long number1, Long number2) {
+    public Float division(Long number1, Long number2) {
         logger.info( "Division {} / {}", number1, number2 );
-        Long resultado=0L;
+        Float resultado=0f;
         try {
-            resultado= number1 / number2;
+            resultado= Float.valueOf(number1/number2);
         }
         catch (ArithmeticException e){
             logger.info("La división por cero da error");

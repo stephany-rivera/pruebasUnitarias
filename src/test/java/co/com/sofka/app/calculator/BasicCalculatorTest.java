@@ -69,7 +69,7 @@ class BasicCalculatorTest {
 
     @Test
     @DisplayName("Testing multiply: 5*8=40")
-    void multiply() {
+    public void multiply() {
         // Arrange
         Long number1 = 5L;
         Long number2 = 8L;
@@ -98,14 +98,14 @@ class BasicCalculatorTest {
 
     @Test
     @DisplayName("Testing division: 4/2=2")
-    void division() {
+    public void division() {
         // Arrange
         Long number1 = 4L;
         Long number2 = 2L;
-        Long expectedValue = 2L;
+        Float expectedValue = 2F;
 
         // Act
-        Long result = basicCalculator.division(number1, number2);
+        Float result = basicCalculator.division(number1, number2);
 
         // Assert
         assertEquals(expectedValue, result);
@@ -119,7 +119,7 @@ class BasicCalculatorTest {
             "32,  8, 4",
             "40,  0, 0"
     })
-    public void severalDivisions(Long first, Long second, Long expectedResult) {
+    public void severalDivisions(Long first, Long second, Float expectedResult) {
         assertEquals(expectedResult, basicCalculator.division(first, second),
                 () -> first + " / " + second + " should equal " + expectedResult);
     }
