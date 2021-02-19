@@ -39,8 +39,34 @@ class BasicCalculatorTest {
     }
 
     @Test
-    void sub() {
+    @DisplayName("Testing sub: 5-3=2")
+    public void sub() {
+        // Arrange
+        Long number1 = 5L;
+        Long number2 = 3L;
+        Long expectedValue = 2L;
+
+        // Act
+        Long result = basicCalculator.sub(number1, number2);
+
+        // Assert
+        assertEquals(expectedValue, result);
     }
+
+    @DisplayName("Testing several substractions")
+    @ParameterizedTest(name = "{0} - {1} = {2}")
+    @CsvSource({
+            "8,    3,   5",
+            "16,    2,   14",
+            "550,  48, 502",
+            "447,  100, 347"
+    })
+    public void severalSubs(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.sub(first, second),
+                () -> first + " + " + second + " should equal " + expectedResult);
+    }
+
+
 }
 
 
