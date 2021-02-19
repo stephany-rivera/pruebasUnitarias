@@ -18,12 +18,12 @@ public class BasicCalculator {
     }
 
     public Long multiply(Long number1, Long number2) {
-        logger.info( "Substraction {} * {}", number1, number2 );
+        logger.info( "Multiplication {} * {}", number1, number2 );
         return number1 * number2;
     }
 
     public Long division(Long number1, Long number2) {
-        logger.info( "Substraction {} / {}", number1, number2 );
+        logger.info( "Division {} / {}", number1, number2 );
         Long resultado=0L;
         try {
             resultado= number1 / number2;

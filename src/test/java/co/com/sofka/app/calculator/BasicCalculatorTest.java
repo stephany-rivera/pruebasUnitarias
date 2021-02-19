@@ -63,7 +63,7 @@ class BasicCalculatorTest {
     })
     public void severalSubstractions(Long first, Long second, Long expectedResult) {
         assertEquals(expectedResult, basicCalculator.substract(first, second),
-                () -> first + " + " + second + " should equal " + expectedResult);
+                () -> first + " - " + second + " should equal " + expectedResult);
     }
 
 
@@ -92,10 +92,42 @@ class BasicCalculatorTest {
     })
     public void severalMultiplications(Long first, Long second, Long expectedResult) {
         assertEquals(expectedResult, basicCalculator.multiply(first, second),
-                () -> first + " + " + second + " should equal " + expectedResult);
+                () -> first + " * " + second + " should equal " + expectedResult);
     }
 
 
+    @Test
+    @DisplayName("Testing division: 4/2=2")
+    void division() {
+        // Arrange
+        Long number1 = 4L;
+        Long number2 = 2L;
+        Long expectedValue = 2L;
+
+        // Act
+        Long result = basicCalculator.division(number1, number2);
+
+        // Assert
+        assertEquals(expectedValue, result);
+    }
+
+    @DisplayName("Testing several divisions")
+    @ParameterizedTest(name = "{0} / {1} = {2}")
+    @CsvSource({
+            "8,    4,   2",
+            "16,    2,   8",
+            "32,  8, 4",
+            "40,  0, 0"
+    })
+    public void severalDivisions(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.division(first, second),
+                () -> first + " / " + second + " should equal " + expectedResult);
+    }
+
+
+
 }
+
+
 
 
